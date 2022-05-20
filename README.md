@@ -12,19 +12,19 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 ### OpenTelemetry Collector Distributions
 
-* Core and contrib
+* [Core and contrib](./exercises/core-distro/)
 * Custom / vendor provided
 
 ### Receivers
 
 * Logs
-  * Filelog
+  * [Filelog](./exercises/receivers/filelog/)
     * operator - router
     * multiline logs
   * Syslog
 
 * Metrics
-  * Host Metrics
+  * [Host Metrics](./exercises/receivers/hostmetrics/)
   * docker_stats or podman stats
   * Simple Prometheus
   * Prometheus
@@ -36,12 +36,15 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 ### Processors
 
+* [Filter](./exercises/processors/filter/)
+* [Resource Detection](./exercises/processors/resourcedetection/)
+
 ### Exporters
   
-* File
-* OTLP
-* Load balancing
-* Prometheus Remote Write
-* Sumo Logic
+* [File](./exercises/exporters/file)
+* [OTLP](./exercises/exporters/otlp)
+* [Load balancing](./exercises/exporters/loadbalancing)
+* [Prometheus Remote Write](./exercises/exporters/prometheusremotewrite)
+* [Sumo Logic](./exercises/exporters/sumologic)
 
 ## The Coffee Bar app

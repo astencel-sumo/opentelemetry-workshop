@@ -1,0 +1,21 @@
+receivers:
+  hostmetrics:
+    scrapers:
+      paging:
+      filesystem:
+      memory:
+      network:
+  hostmetrics/load:
+    collection_interval: 15s
+    scrapers:
+      load:
+
+exporters:
+  logging:
+    loglevel: debug
+
+service:
+  pipelines:
+    metrics:
+      receivers: [hostmetrics, hostmetrics/load]
+      exporters: [logging]
