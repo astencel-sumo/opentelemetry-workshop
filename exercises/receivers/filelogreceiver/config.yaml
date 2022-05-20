@@ -1,0 +1,27 @@
+exporters:
+  logging:
+    loglevel: debug
+    sampling_initial: 5
+    sampling_thereafter: 200
+  file:
+    path: ./filename.json
+
+receivers:
+  filelog:
+    include:
+    - ./file.txt
+    include_file_name: false
+    include_file_path_resolved: true
+    start_at: beginning
+    attributes:
+      test: true
+      notest: false
+    resource:
+      res: one
+      other: two
+
+service:
+  pipelines:
+    logs:
+      receivers: [filelog]
+      exporters: [logging, file]

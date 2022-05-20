@@ -1,0 +1,5 @@
+version: "3"
+
+services:
+  multiline-logs-generator:
+    image: multiline-logs-generator:latest
