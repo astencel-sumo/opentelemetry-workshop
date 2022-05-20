@@ -21,7 +21,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
   * [Filelog](./exercises/receivers/filelog/)
     * operator - router
     * multiline logs
-  * Syslog
+  * [Syslog](./exercises/receivers/syslog/)
 
 * Metrics
   * [Host Metrics](./exercises/receivers/hostmetrics/)

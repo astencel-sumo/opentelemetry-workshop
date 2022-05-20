@@ -1,0 +1,16 @@
+receivers:
+  syslog:
+    tcp:
+      listen_address: "0.0.0.0:54526"
+    protocol: rfc3164
+    location: Europe/Warsaw
+
+exporters:
+  logging:
+    loglevel: debug
+
+service:
+  pipelines:
+    logs:
+      receivers: [syslog]
+      exporters: [logging]
