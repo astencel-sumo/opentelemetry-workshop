@@ -15,6 +15,13 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 * [Core and contrib](./exercises/core-distro/)
 * Custom / vendor provided
 
+### Basic configuration
+
+* Basics
+* Extensions
+* Telemetry
+* Environment variables
+
 ### Receivers
 
 * Logs
@@ -26,7 +33,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 * Metrics
   * [Host Metrics](./exercises/receivers/hostmetrics/)
   * docker_stats or podman stats
-  * Simple Prometheus
+  * [Simple Prometheus](./exercises/receivers/simpleprometheus/)
   * Prometheus
   * Carbon
   * nginx

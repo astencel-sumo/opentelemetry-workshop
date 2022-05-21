@@ -1,0 +1,17 @@
+exporters:
+  logging:
+    loglevel: debug
+
+receivers:
+  prometheus_simple:
+    endpoint: "localhost:8888"
+
+service:
+  telemetry:
+    metrics:
+      address: 0.0.0.0:8889
+  pipelines:
+    metrics:
+      receivers: [prometheus_simple]
+      exporters: [logging]
+

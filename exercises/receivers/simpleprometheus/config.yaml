@@ -1,0 +1,11 @@
+exporters:
+  logging:
+
+receivers:
+  prometheus_simple:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [prometheus_simple]
+      exporters: [logging]
