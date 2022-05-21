@@ -1,6 +1,6 @@
 # Syslog Receiver exercise - steps to follow
 
-* Run the prepared [config](config.yaml) file
+* Run the otelcol instance using the prepared [config](config.yaml) file
 
   ```bash
   otelcol-contrib --config config.yaml
