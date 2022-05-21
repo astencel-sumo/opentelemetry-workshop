@@ -32,9 +32,8 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 * Metrics
   * [Host Metrics](./exercises/receivers/hostmetrics/)
-  * docker_stats or podman stats
+  * [Docker Stats](./exercises/receivers/dockerstats/)
   * [Simple Prometheus](./exercises/receivers/simpleprometheus/)
-  * Prometheus
   * Carbon
   * nginx
 

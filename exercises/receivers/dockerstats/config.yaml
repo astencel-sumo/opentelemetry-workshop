@@ -1,0 +1,12 @@
+receivers:
+
+exporters:
+  logging:
+  file:
+    path: metrics.json
+
+service:
+  pipelines:
+    metrics:
+      receivers: []
+      exporters: [logging, file]

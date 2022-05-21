@@ -1,0 +1,16 @@
+receivers:
+  docker_stats:
+    collection_interval: 3s
+    excluded_images:
+      - busybox
+
+exporters:
+  logging:
+  file:
+    path: metrics.json
+
+service:
+  pipelines:
+    metrics:
+      receivers: [docker_stats]
+      exporters: [logging, file]
