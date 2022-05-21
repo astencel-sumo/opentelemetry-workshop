@@ -22,9 +22,9 @@
   otelcol-contrib --version
   ```
 
-* Make sure to use proper documenation version on GitHub using the git branch, eg. `release/v0.51.x`
+* Make sure to use proper documentation version on GitHub using the git branch, eg. `release/v0.51.x`
 
-* Check if otelcol is available on localhost:4318
+* Check if otelcol is available on `localhost:4318`
 
   ```bash
   telnet localhost 4318
