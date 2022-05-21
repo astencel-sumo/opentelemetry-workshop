@@ -1,13 +1,13 @@
 # Simple Prometheus Receiver exercise - steps to follow
 
-For this excersice we need an application which will create and expose metrics in the Prometheus format. We'll reuse the OpenTelemetry Collector for that purpose.
+For this excersice we need an application which will create and expose metrics in the Prometheus format. We'll reuse the OpenTelemetry Collector for that purpose as it exposes telemetry data in the Prometheus format by default.
 
-## First otelcol instance
+## Otelcol instance for metrics creation
 
 * Run the otelcol instance which will create and expose metrics using the prepared [config-data-creator.yaml](./config-data-creator.yaml) file. Keep it running.
 
   ```bash
-  otelcol-contrib --config config-data-creator.yaml
+  otelcol-contrib --config config-metrics-creator.yaml
   ```
 
   Examin the STDOUT logs - you should find a line similar to this one:
@@ -51,7 +51,7 @@ For this excersice we need an application which will create and expose metrics i
 
   Keep this otelcol instance running. We will need it for the rest of this excersize.
 
-## Second otelcol instance
+## Second otelcol instance for metrics collection
 
 At this point we need a second otelcol instance which will scrape Prometheus metrics from the first instance.
 
@@ -76,4 +76,4 @@ At this point we need a second otelcol instance which will scrape Prometheus met
 
 ## Question
 
-How many metrics are scraped vs how many are exposed at [localhost:8888/metrics](localhost:8888/metrics)? Can you find what are the additional ones? Try changing the `.exporters.logging.loglevel=debug` to find out.
+How many metrics you get vs how many are exposed at [localhost:8888/metrics](localhost:8888/metrics)? Can you find what are the additional ones? Try changing the `.exporters.logging.loglevel=debug` to find out.
