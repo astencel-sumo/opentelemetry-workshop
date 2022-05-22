@@ -1,0 +1,12 @@
+exporters:
+  logging:
+    loglevel: debug
+
+receivers:
+  redis:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [redis]
+      exporters: [logging]

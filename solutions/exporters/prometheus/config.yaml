@@ -1,0 +1,14 @@
+exporters:
+  logging:
+    loglevel: debug
+  prometheus:
+    endpoint: "127.0.0.1:12345"
+
+receivers:
+  redis:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [redis]
+      exporters: [logging, prometheus]

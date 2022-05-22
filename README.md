@@ -51,7 +51,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 * File
 * OTLP
 * Load balancing
-* Prometheus Remote Write
+* [Prometheus](./exercises/exporters/prometheus/)
 * Sumo Logic
 
 ## The Coffee Bar app
