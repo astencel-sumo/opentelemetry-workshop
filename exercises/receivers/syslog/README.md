@@ -1,4 +1,4 @@
-# Syslog Receiver exercise - steps to follow
+# Syslog Receiver exercise
 
 * Run the otelcol instance using the prepared [config](config.yaml) file
 

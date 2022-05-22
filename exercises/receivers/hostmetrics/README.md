@@ -1,4 +1,4 @@
-# Host Metrics Receiver workshop - steps to follow
+# Host Metrics Receiver exercise
 
 * Take a look at the [config.yaml](config.yaml) configuration file and run `otelcol` with this config locally
 

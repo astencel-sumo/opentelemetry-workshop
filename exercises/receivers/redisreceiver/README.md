@@ -1,4 +1,4 @@
-# Redis Receiver exercise - steps to follow
+# Redis Receiver exercise
 
 * Run the Redis instance as a Docker container exposing it at `127.0.0.1:16379`:
 

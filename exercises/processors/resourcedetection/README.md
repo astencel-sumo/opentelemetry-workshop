@@ -1,4 +1,4 @@
-# Resource Detection Processor workshop - steps to follow
+# Resource Detection Processor exercise
 
 * Take a look at the [config.yaml](config.yaml) configuration file and run `otelcol` with this config locally
 

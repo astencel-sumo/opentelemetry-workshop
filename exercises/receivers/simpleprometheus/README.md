@@ -1,4 +1,4 @@
-# Simple Prometheus Receiver exercise - steps to follow
+# Simple Prometheus Receiver exercise
 
 For this excersice we need an application which will create and expose metrics in the Prometheus format. We'll reuse the OpenTelemetry Collector for that purpose as it exposes telemetry data in the Prometheus format by default.
 

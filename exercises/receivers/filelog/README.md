@@ -1,4 +1,4 @@
-# Filelog Receiver workshop - steps to follow
+# Filelog Receiver exercise
 
 * Run the collector:
 

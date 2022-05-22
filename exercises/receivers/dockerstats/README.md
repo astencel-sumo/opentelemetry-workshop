@@ -1,4 +1,4 @@
-# Docker Stats Receiver workshop - steps to follow
+# Docker Stats Receiver exercise
 
 * Run Docker container:
 
