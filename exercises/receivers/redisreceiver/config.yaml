@@ -1,0 +1,13 @@
+exporters:
+  logging:
+    loglevel: debug
+
+receivers:
+  redis:
+    endpoint: ${REDIS_ENDPOINT}
+
+service:
+  pipelines:
+    metrics:
+      receivers: [redis]
+      exporters: [logging]
