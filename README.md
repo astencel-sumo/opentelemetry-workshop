@@ -43,15 +43,15 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 ### Processors
 
-* [Filter](./exercises/processors/filter/)
+* Filter
 * [Resource Detection](./exercises/processors/resourcedetection/)
 
 ### Exporters
   
-* [File](./exercises/exporters/file)
-* [OTLP](./exercises/exporters/otlp)
-* [Load balancing](./exercises/exporters/loadbalancing)
-* [Prometheus Remote Write](./exercises/exporters/prometheusremotewrite)
-* [Sumo Logic](./exercises/exporters/sumologic)
+* File
+* OTLP
+* Load balancing
+* Prometheus Remote Write
+* Sumo Logic
 
 ## The Coffee Bar app
