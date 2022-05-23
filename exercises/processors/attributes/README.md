@@ -7,6 +7,7 @@ Whenever you need to modify attributes of a log, metric or span you can use the 
   ```bash
   otelcol-contrib --config config.yaml
   ```
+
   Notice that Resource Detection processor has been used, and two resource labels has been added:
 
   ```text

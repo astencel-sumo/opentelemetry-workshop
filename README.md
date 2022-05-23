@@ -35,8 +35,6 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
   * [Docker Stats](./exercises/receivers/dockerstats/)
   * [Simple Prometheus](./exercises/receivers/simpleprometheus/)
   * [Redis](./exercises/receivers/redisreceiver/)
-  * Carbon
-  * nginx
 
 * Traces
   * OTLP
