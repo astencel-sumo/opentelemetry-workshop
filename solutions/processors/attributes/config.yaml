@@ -1,0 +1,33 @@
+receivers:
+  hostmetrics:
+    collection_interval: 5s
+    scrapers:
+      load:
+
+processors:
+  resource:
+    attributes:
+      - key: host
+        from_attribute: host.name
+        action: insert
+      - key: host.name
+        action: delete
+      - key: my.custom.attribute
+        value: "my custom value"
+        action: insert
+
+  resourcedetection:
+    detectors: ["env", "system"]
+    system:
+      hostname_sources: ["os"]
+
+exporters:
+  logging:
+    loglevel: debug
+
+service:
+  pipelines:
+    metrics:
+      receivers: [hostmetrics]
+      processors: [resourcedetection, resource]
+      exporters: [logging]
