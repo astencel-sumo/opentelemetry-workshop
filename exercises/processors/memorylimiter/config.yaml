@@ -1,0 +1,21 @@
+receivers:
+  hostmetrics:
+    collection_interval: 5s
+    scrapers:
+      load:
+  filelog:
+    include:
+    - ./logs.txt
+    start_at: beginning
+
+exporters:
+  logging:
+
+service:
+  pipelines:
+    logs:
+      receivers: [filelog]
+      exporters: [logging]
+    metrics:
+      receivers: [hostmetrics]
+      exporters: [logging]

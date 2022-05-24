@@ -1,0 +1,31 @@
+receivers:
+  hostmetrics:
+    collection_interval: 5s
+    scrapers:
+      load:
+  filelog:
+    include:
+    - ./logs.txt
+    start_at: beginning
+
+processors:
+  memory_limiter/logs:
+    check_interval: 1s
+    limit_mib: 128
+  memory_limiter/metrics:
+    check_interval: 1s
+    limit_mib: 64
+
+exporters:
+  logging:
+
+service:
+  pipelines:
+    logs:
+      receivers: [filelog]
+      processors: [memory_limiter/logs]
+      exporters: [logging]
+    metrics:
+      receivers: [hostmetrics]
+      processors: [memory_limiter/metrics]
+      exporters: [logging]
