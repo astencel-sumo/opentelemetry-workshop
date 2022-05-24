@@ -1,0 +1,30 @@
+receivers:
+  hostmetrics:
+    collection_interval: 5s
+    scrapers:
+      load:
+
+processors:
+  metricstransform:
+    transforms:
+      - include: system.cpu.load_average.1m
+        action: update
+        operations:
+          - action: add_label
+            new_label: agent
+            new_value: otelcol {{version}}
+      - include: ^system\.cpu\.load_average\.(.*)$$
+        match_type: regexp
+        action: update
+        new_name: load.$$1
+
+exporters:
+  logging:
+    loglevel: debug
+
+service:
+  pipelines:
+    metrics:
+      receivers: [hostmetrics]
+      processors: [metricstransform]
+      exporters: [logging]
