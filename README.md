@@ -44,7 +44,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 ### Processors
 
 * [Memory Limiter](./exercises/processors/memorylimiter/)
-* Filter
+* [Filter](./exercises/processors/filter/)
 * [Resource Detection](./exercises/processors/resourcedetection/)
 * [Resource](./exercises/processors/resource/)
 * [Attributes](./exercises/processors/attributes/)
