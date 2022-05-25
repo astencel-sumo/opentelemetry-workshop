@@ -23,5 +23,5 @@ Please follow [the guide](https://help.sumologic.com/Traces/01Getting_Started_wi
     export SUMOLOGIC_HTTP_TRACES_URL=https://your-sumo-logic-http-traces-source-url-here
     ```
 4. Run `docker-compose up`.
-5. Open browser and navigate to `http://localhost:3000`.
+5. Navigate to `http://localhost:3000` and make some order.
 6. Go to Sumo Logic Web App and find your order in [Traces view](https://help.sumologic.com/Traces/02Working_with_Tracing_data/03View_and_investigate_traces).
