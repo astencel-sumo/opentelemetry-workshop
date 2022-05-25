@@ -49,7 +49,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 * [Resource](./exercises/processors/resource/)
 * [Attributes](./exercises/processors/attributes/)
 * [Metrics Transform](./exercises/processors/metricstransform/)
-* Transform
+* [Transform](./exercises/processors/transform/)
 
 ### Exporters
   
