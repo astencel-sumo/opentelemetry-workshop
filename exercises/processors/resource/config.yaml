@@ -5,11 +5,10 @@ receivers:
       load:
 
 processors:
-  attributes:
-    actions:
-      - key: my.custom.attribute
-        value: "my custom value"
-        action: insert
+  resourcedetection:
+    detectors: ["env", "system"]
+    system:
+      hostname_sources: ["os"]
 
 exporters:
   logging:
@@ -19,5 +18,6 @@ service:
   pipelines:
     metrics:
       receivers: [hostmetrics]
-      processors: [attributes]
+      processors: [resourcedetection]
       exporters: [logging]
+

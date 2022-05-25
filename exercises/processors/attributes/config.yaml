@@ -4,12 +4,6 @@ receivers:
     scrapers:
       load:
 
-processors:
-  resourcedetection:
-    detectors: ["env", "system"]
-    system:
-      hostname_sources: ["os"]
-
 exporters:
   logging:
     loglevel: debug
@@ -18,6 +12,5 @@ service:
   pipelines:
     metrics:
       receivers: [hostmetrics]
-      processors: [resourcedetection]
       exporters: [logging]
 
