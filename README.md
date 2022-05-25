@@ -6,7 +6,9 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 ## Data creation
 
-* Write a simple application which creates logs, metrics and traces using the OpenTelemetry libraries
+* Manual instrumentation: write a simple application which creates logs, metrics and traces using the OpenTelemetry libraries
+
+* Autoinstrumentation: Pet Clinic
 
 ## Data collection
 
@@ -47,6 +49,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 * [Resource](./exercises/processors/resource/)
 * [Attributes](./exercises/processors/attributes/)
 * [Metrics Transform](./exercises/processors/metricstransform/)
+* Transform
 
 ### Exporters
   
