@@ -30,7 +30,7 @@
   telnet localhost 4318
   ```
 
-* Check if otelcol exposes Promethues metrics
+* Check if otelcol exposes Prometheus metrics
 
   ```bash
   curl localhost:8888/metrics

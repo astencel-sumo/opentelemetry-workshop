@@ -14,7 +14,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 ### OpenTelemetry Collector Distributions
 
-* [Core and contrib](./exercises/core-distro/)
+* [Core and contrib](./exercises/distros/otelcol-and-contrib/)
 * Custom / vendor provided
 
 ### Basic configuration
