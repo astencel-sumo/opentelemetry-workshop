@@ -1,0 +1,40 @@
+receivers:
+  opencensus: {}
+  jaeger:
+    protocols:
+      thrift_compact:
+        endpoint:
+      thrift_http:
+        endpoint:
+      grpc:
+        endpoint:
+  otlp:
+    protocols:
+      grpc:
+        endpoint:
+      http:
+        endpoint:
+  zipkin:
+    endpoint:
+processors:
+  memory_limiter:
+    check_interval: 5s
+    limit_mib: 1900
+extensions:
+  health_check: {}
+exporters:
+  logging:
+    loglevel: debug
+  otlphttp:
+    traces_endpoint: $SUMOLOGIC_HTTP_TRACES_URL
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [jaeger, otlp, zipkin]
+      processors: [memory_limiter]
+      exporters: [logging, otlphttp]
+    metrics:
+      receivers: [otlp]
+      exporters: [logging]
