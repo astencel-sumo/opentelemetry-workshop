@@ -19,7 +19,7 @@ OTLP protocol is one of the most important parts of the OpenTelemetry project. W
 
 * Spans can be created using the OpenTelemetry libraries available for many programming languages. They can be sent over HTTP as simple JSON as well. Here we will send them with simple `curl` command.
 
-  Take a look at the [send-span.sh](./send-span.sh) script. Make sure it will send span to the locally running otelcol instance:
+  Take a look at the [send-span.sh](./send-span.sh) script. Make sure it will send span to your locally running otelcol instance:
 
   ```bash
   $ ./send-span.sh
