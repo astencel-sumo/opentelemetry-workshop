@@ -4,7 +4,9 @@ exporters:
 
 receivers:
   prometheus_simple:
-    endpoint: "localhost:8888"
+    endpoint: "0.0.0.0:8888"
+  prometheus_simple/own:
+    endpoint: "0.0.0.0:8889"
 
 service:
   telemetry:
@@ -12,6 +14,6 @@ service:
       address: 0.0.0.0:8889
   pipelines:
     metrics:
-      receivers: [prometheus_simple]
+      receivers: [prometheus_simple, prometheus_simple/own]
       exporters: [logging]
 
