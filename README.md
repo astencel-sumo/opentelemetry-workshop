@@ -39,7 +39,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
   * [Redis](./exercises/receivers/redisreceiver/)
 
 * Traces
-  * OTLP
+  * [OTLP](./exercises/receivers/otlp/)
 
 ### Processors
 
