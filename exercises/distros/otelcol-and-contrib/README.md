@@ -1,28 +1,22 @@
 # Steps to follow
 
-* Consult the configuration stored in the `config.yaml` file:
+* Download the `OpenTelemetry Collector Contrib` - also called `otelcol-contrib` version `v0.51.0` from the [contrib releases page](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.51.0)
 
-  ```bash
-  cat config.yaml
-  ```
+* Unpack or install it in the system. Add to your shell's `PATH` variable for easier usage.
 
-* Run the collector:
-
-  ```bash
-  otelcol-contrib --config config.yaml
-  ```
-
-* Visit the receiver documentation: https://github.com/open-telemetry/opentelemetry-collector/tree/main/receiver/otlpreceiver
-
-* Visit the exporter documentation: https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/loggingexporter
-
-* Find out which otelcol version you use
+* Find out which otelcol version you use. This workshop has been prepared using `v0.51.0`
 
   ```bash
   otelcol-contrib --version
   ```
 
 * Make sure to use proper documentation version on GitHub using the git branch, eg. `release/v0.51.x`
+
+* Run the otelcol instance using the prepared [config](config.yaml) file.
+
+  ```bash
+  otelcol-contrib --config config.yaml
+  ```
 
 * Check if otelcol is available on `localhost:4318`
 
