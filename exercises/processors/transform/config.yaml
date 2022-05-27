@@ -1,0 +1,36 @@
+exporters:
+  logging:
+    loglevel: debug
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+
+processors:
+  transform:
+    logs:
+      queries:
+        - set(severity_text, "FAIL") where body == "request failed"
+    metrics:
+      queries:
+        - set(metric.description, "Sum") where metric.type == "Sum"
+    traces:
+      queries:
+        - set(status.code, 1) where attributes["http.path"] == "/health"
+        - keep_keys(resource.attributes, "service.name", "service.namespace", "cloud.region")
+
+service:
+  pipelines:
+    logs:
+      receivers: [otlp]
+      processors: [transform]
+      exporters: [logging]
+    metrics:
+      receivers: [otlp]
+      processors: [transform]
+      exporters: [logging]
+    traces:
+      receivers: [otlp]
+      processors: [transform]
+      exporters: [logging]

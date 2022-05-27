@@ -72,8 +72,14 @@ At this point we need a second otelcol instance which will scrape Prometheus met
   ```
 
   That's because it tries to serve metrics at [localhost:8888](localhost:8888) - but our first process is already using that address!  
-  Change [config.yaml](./config.yaml) configuration file for the second otelcol instance by changing the `.service.telemetry.metrics.address` key. Try to run otelcol again.
+  Change [config.yaml](./config.yaml) configuration file for the second otelcol instance by changing the `.service.telemetry.metrics.address` key. Try using the `0.0.0.0:8889` address and running otelcol again.
 
 ## Question
 
 How many metrics you get vs how many are exposed at [localhost:8888/metrics](localhost:8888/metrics)? Can you find what are the additional ones? Try changing the `.exporters.logging.loglevel=debug` to find out.
+
+## Autoscrape
+
+* Try adding configuration to scrape second otelcol own metrics. They should be available at `0.0.0.0:8889` address. Can you differentiate between metrics from first and second otelcol instances?
+
+  Hint: check the `resource attributes` and `record attributes`
