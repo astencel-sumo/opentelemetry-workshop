@@ -47,11 +47,13 @@ services:
       - REACT_APP_RUM_SCRIPT_URL=https://rum.sumologic.com/sumologic-rum.js
       - REACT_APP_COFFEE_BAR_URL=http://localhost:8082/order
       - REACT_APP_SERVICE_NAME=the-coffee-bar-frontend
-      - REACT_APP_COLLECTION_SOURCE_URL=$SUMOLOGIC_HTTP_TRACES_URL
+      - REACT_APP_COLLECTION_SOURCE_URL=http://localhost:4319/v1/traces
       - REACT_APP_APPLICATION_NAME=tcb-local
       - REACT_APP_DEFAULT_ATTRIBUTES={"testKey":"testValue","testListKey":["1"]}
       - REACT_APP_PROPAGATION_CORS_URLS=[/^http:\/\/localhost:8082\/.*/,/^http:\/\/the-coffee-bar:8082\/.*/,]
       - REACT_APP_DROP_SINGLE_TRACES=false
+    depends_on:
+      - otelcol
 
   the-coffee-machine:
     image: public.ecr.aws/sumologic/the-coffee-bar:pythonAppsv0.2.1-ot1.10.1-0.28b1
@@ -158,3 +160,6 @@ services:
         - ./logs:/logs
     environment:
       - SUMOLOGIC_TOKEN=$SUMOLOGIC_TOKEN
+    ports:
+      - 4319:4319
+      - 514:514

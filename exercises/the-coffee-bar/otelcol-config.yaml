@@ -24,6 +24,13 @@ receivers:
         endpoint:
       http:
         endpoint:
+  otlp/cors:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4319
+        cors:
+          allowed_origins:
+            - http://localhost:3000
   zipkin:
     endpoint:
 processors:
@@ -56,21 +63,20 @@ extensions:
 
 exporters:
   logging:
-    loglevel: debug
   sumologic:
 
 service:
   extensions: [health_check, sumologic]
   pipelines:
     traces:
-      receivers: [jaeger, otlp, zipkin]
+      receivers: [jaeger, otlp, otlp/cors, zipkin]
       processors: [memory_limiter, resourcedetection, batch]
-      exporters: [sumologic]
+      exporters: [sumologic, logging]
     metrics:
       receivers: [otlp]
       processors: [memory_limiter, resourcedetection, batch]
-      exporters: [sumologic]
+      exporters: [sumologic, logging]
     logs:
       receivers: [syslog, filelog]
       processors: [memory_limiter, resourcedetection, batch]
-      exporters: [sumologic]
+      exporters: [sumologic, logging]
