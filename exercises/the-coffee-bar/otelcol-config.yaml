@@ -1,4 +1,14 @@
 receivers:
+  syslog:
+    udp:
+      listen_address: 0.0.0.0:514
+    protocol: rfc5424
+  filelog:
+    include:
+      - ./logs/*.log
+    include_file_name: false
+    include_file_path_resolved: true
+    start_at: beginning
   opencensus: {}
   jaeger:
     protocols:
@@ -20,21 +30,47 @@ processors:
   memory_limiter:
     check_interval: 5s
     limit_mib: 1900
+  batch:
+    send_batch_size: 256
+    send_batch_max_size: 512
+    timeout: 5s
+  resourcedetection:
+    detectors: ["system","env","docker"]
+    timeout: 2s
+    override: false
 extensions:
   health_check: {}
+  sumologic:
+    install_token: $SUMOLOGIC_TOKEN
+    collector_name: opentelemetry-workshop
+    #Deployment	API base URL
+    #api_base_url: API_BASE_URL_HERE
+    #default/US1	https://open-collectors.sumologic.com
+    #US2	https://open-collectors.us2.sumologic.com
+    #AU	https://open-collectors.au.sumologic.com
+    #DE	https://open-collectors.de.sumologic.com
+    #EU	https://open-collectors.eu.sumologic.com
+    #JP	https://open-collectors.jp.sumologic.com
+    #CA	https://open-collectors.ca.sumologic.com
+    #IN	https://open-collectors.in.sumologic.com
+
 exporters:
   logging:
     loglevel: debug
-  otlphttp:
-    traces_endpoint: $SUMOLOGIC_HTTP_TRACES_URL
+  sumologic:
 
 service:
-  extensions: [health_check]
+  extensions: [health_check, sumologic]
   pipelines:
     traces:
       receivers: [jaeger, otlp, zipkin]
-      processors: [memory_limiter]
-      exporters: [logging, otlphttp]
+      processors: [memory_limiter, resourcedetection, batch]
+      exporters: [sumologic]
     metrics:
       receivers: [otlp]
-      exporters: [logging]
+      processors: [memory_limiter, resourcedetection, batch]
+      exporters: [sumologic]
+    logs:
+      receivers: [syslog, filelog]
+      processors: [memory_limiter, resourcedetection, batch]
+      exporters: [sumologic]
