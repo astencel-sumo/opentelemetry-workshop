@@ -1,4 +1,13 @@
 receivers:
+  filelog:
+    include:
+    - ./logs.txt
+    start_at: beginning
+    operators:
+      - id: regex-parse
+        type: regex_parser
+        parse_from: body
+        regex: 'Host=(?P<host>[^,]+), Type=(?P<type>[^\s]+)'
   hostmetrics:
     collection_interval: 5s
     scrapers:
@@ -6,6 +15,12 @@ receivers:
 
 processors:
   filter:
+    logs:
+      exclude:
+        match_type: regexp
+        record_attributes:
+          - key: host
+            value: foo.*
     metrics:
       exclude:
         match_type: regexp
@@ -18,8 +33,11 @@ exporters:
 
 service:
   pipelines:
+    logs:
+      receivers: [filelog]
+      processors: [filter]
+      exporters: [logging]
     metrics:
       receivers: [hostmetrics]
       processors: [filter]
       exporters: [logging]
-
