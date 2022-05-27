@@ -26,6 +26,9 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 ### Receivers
 
+* Logs, metrics and traces
+  * [OTLP](./exercises/receivers/otlp/)
+
 * Logs
   * [Filelog](./exercises/receivers/filelog/)
     * operator - router
@@ -39,7 +42,8 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
   * [Redis](./exercises/receivers/redisreceiver/)
 
 * Traces
-  * [OTLP](./exercises/receivers/otlp/)
+  * Jaeger, Zipkin
+
 
 ### Processors
 
