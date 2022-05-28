@@ -32,7 +32,7 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 
 #### Extensions
 
-* Health Check
+* [Health Check](./exercises/extensions/healthcheck/)
 * zPages
 * Performance Profiler
 
