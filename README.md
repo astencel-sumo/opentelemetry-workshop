@@ -17,12 +17,24 @@ Short presentation on what is OpenTelemetry in general, what it can be used for:
 * [Core and contrib](./exercises/distros/otelcol-and-contrib/)
 * [Custom / vendor provided](./exercises/distros/custom/)
 
-### Basic configuration
+### Configuration basics
 
-* Basics
-* Extensions
+#### Basics
+
+* [Basics](https://opentelemetry.io/docs/collector/configuration/#basics)
+* [Receivers](https://opentelemetry.io/docs/collector/configuration/#receivers)
+* [Processors](https://opentelemetry.io/docs/collector/configuration/#processors)
+* [Exporters](https://opentelemetry.io/docs/collector/configuration/#exporters)
+* [Extensions](https://opentelemetry.io/docs/collector/configuration/#extensions)
+* [Service](https://opentelemetry.io/docs/collector/configuration/#service)
+* [Environment variables](https://opentelemetry.io/docs/collector/configuration/#configuration-environment-variables)
 * Telemetry
-* Environment variables
+
+#### Extensions
+
+* Health Check
+* zPages
+* Performance Profiler
 
 ### Receivers
 
