@@ -1,10 +1,4 @@
-# OpenTelemetry Collector Extensions exercise
-
-Extensions are optional components which are not involved in data processing
-
-* Read the excerpt from [extensions official documentation](https://opentelemetry.io/docs/collector/configuration/#extensions)
-
-## Health Check extension
+# Health Check Extension exercise
 
 * Read the [Health Check Extension documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.51.0/extension/healthcheckextension/README.md)
 
@@ -31,7 +25,7 @@ Extensions are optional components which are not involved in data processing
   2022-05-28T08:48:56.999+0200	info	healthcheckextension@v0.51.0/healthcheckextension.go:44	Starting health_check extension	{"kind": "extension", "name": "health_check", "config": {"Port":0,"TCPAddr":{"Endpoint":"0.0.0.0:13133"},"Path":"/","CheckCollectorPipeline":{"Enabled":false,"Interval":"5m","ExporterFailureThreshold":5}}}
   ```
 
-* While still running the otelcol, check the health status that is exposed at the default [https://localhost:13133](https://localhost:13133). You can do that using the web browser or with help of `curl` and `jq` commands run in other console window:
+* While still running otelcol, check the health status that is exposed at the default [https://localhost:13133](https://localhost:13133). You can do that using the web browser or with help of `curl` and `jq` commands run in other console window:
 
   ```bash
   $ curl -s localhost:13133 | jq
@@ -41,4 +35,3 @@ Extensions are optional components which are not involved in data processing
     "uptime": "8m19.627506344s"
   }
   ```
-
