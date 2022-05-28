@@ -1,0 +1,17 @@
+exporters:
+  logging:
+
+receivers:
+  otlp:
+    protocols:
+      http:
+
+service:
+  telemetry:
+    logs:
+      initial_fields:
+        service: my-static-name
+  pipelines:
+    logs:
+      receivers: [otlp]
+      exporters: [logging]
